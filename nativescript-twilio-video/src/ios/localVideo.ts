@@ -1,12 +1,6 @@
 import { View } from 'ui/core/view';
-import * as utils from "tns-core-modules/utils/utils";
-import { Observable, fromObject } from 'tns-core-modules/data/observable';
 
-import { VideoViewDelegate } from './delegates';
-
-declare var TVIVideoView;
-
-// const videoView = TVIVideoView.alloc().init();
+declare var TVIVideoView, UIViewContentMode;
 
 export class LocalVideo extends View {
 
@@ -16,12 +10,6 @@ export class LocalVideo extends View {
     
     constructor() {
         super();
-        // try {
-        //     this._videoViewDelegate = VideoViewDelegate.initWithOwner(new WeakRef(this));
-        //     this.localVideoView = TVIVideoView.alloc().init().initWithFrame(this._videoViewDelegate);
-        // } catch(e) {
-        //     console.log(e);
-        // }
         this.localVideoView = TVIVideoView.alloc().init();
         this.localVideoView.mirror = true;
         this.localVideoView.contentMode = UIViewContentMode.ScaleAspectFill;

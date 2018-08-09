@@ -1,17 +1,13 @@
 import { View } from 'ui/core/view';
-import * as utils from "tns-core-modules/utils/utils";
-import { Observable, fromObject } from 'tns-core-modules/data/observable';
 
-// import { VideoViewDelegate } from './delegates';
-
-declare var TVIVideoView, CGRectMake;
+declare var TVIVideoView, UIViewContentMode;
 
 
 export class RemoteVideo extends View {
 
     remoteVideoView: any;
     _remoteViewDelegate: any;
-    nativeView: UIView;
+    nativeView: any;
 
     constructor() {
         super();
